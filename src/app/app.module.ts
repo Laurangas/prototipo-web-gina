@@ -3,16 +3,54 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GrillaComponent } from './components/grilla/grilla.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';// importamos sidenav para el menu (es un tipo de menu)
+import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { QuestionComponent } from './components/question/question.component';
+import { HomeComponent } from './components/home/home.component';
+
+
+import { RouterModule, Routes } from '@angular/router';
+import { AgGridModule } from 'ag-grid-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // importamos la dependencia
+
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';// importamos el tipo de lista para el menu
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';// importamos para bootstrap
+// MDB Angular Pro
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GrillaComponent,
+    SidenavComponent,
+    ContactComponent,
+    AboutComponent,
+    QuestionComponent,
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule.withComponents([]),
+    BrowserAnimationsModule, // agregamos el import, para usar todos los componentes
+    MatSidenavModule, 
+    MatListModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatIconModule,
+    RouterModule.forRoot([]),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
 export class AppModule { }
