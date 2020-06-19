@@ -3,27 +3,27 @@
   font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/ubuntu.woff2') format('woff2');
+  src: url('ubuntu.woff2') format('woff2');
 }
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/roboto.woff2') format('woff2');
+  src: url('roboto.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: url('/assets/fonts/roboto-light.woff2') format('woff2');
+  src: url('roboto-light.woff2') format('woff2');
 }
 /* material-icons */
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/material-icons.woff2') format('woff2');
+  src: url('material-icons.woff2') format('woff2');
 }
 
 .material-icons {
