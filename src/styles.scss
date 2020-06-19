@@ -20,12 +20,6 @@ h1, h2, h3, h4, h5 {
   font-family: "Ubuntu", sans-serif !important;
 }
 
-.logo-title {
-  font-family: "Ubuntu", sans-serif !important;
-  font-size: 60px;
-  margin-left: 10px;
-}
-
 .container {
   padding: 30px;
 }
@@ -47,4 +41,8 @@ h1, h2, h3, h4, h5 {
 .flex-spacer {
   -webkit-box-flex: 1;
   flex-grow: 1;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 64px!important;
 }

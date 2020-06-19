@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  // declaramos la tabla 
+  // declaramos la tabla
   columnDefs = [  //definimos las columanas pasandole json
     {headerName: 'Marca', field: 'marca', sortable:true}, // organizar el contenido
     {headerName: 'Modelo', field: 'modelo',filter:true}, // filtrar por
-    {headerName: 'Precio', field: 'precio', checkboxSelection:true}// seleccionar 
+    {headerName: 'Precio', field: 'precio', checkboxSelection:true}// seleccionar
   ];
   rowData = [ //definimos los renglones creando objetos con informacion
     {marca: 'aves', modelo: 'pato', precio: 1234},
