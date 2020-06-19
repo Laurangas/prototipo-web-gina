@@ -1,18 +1,50 @@
 //importamos los estilos de la pagina
 @import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
 @import "../node_modules/ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss";
+@import "assets/fonts/fonts.css";
 
 .ag-theme-alpine {
-    @include ag-theme-alpine();
+  @include ag-theme-alpine();
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+html, body {
+  height: 100%;
+}
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
 
+h1, h2, h3, h4, h5 {
+  font-family: "Ubuntu", sans-serif !important;
+}
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+.logo-title {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 60px;
+  margin-left: 10px;
+}
 
+.container {
+  padding: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-spacer {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}

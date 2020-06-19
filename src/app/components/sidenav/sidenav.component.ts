@@ -10,12 +10,11 @@ import {Router} from '@angular/router';
 export class SidenavComponent implements OnInit {
   mobileQuery: MediaQueryList;
 
-  //fillerNav = Array(50).fill(0).map((_, i) => `Nav Item ${i + 1}`);
-  fillerNav =[ 
-    {name:'home',route:'home',icon:'home'},
-    {name:'contacto',route:'contact',icon:'contacts'},
-    {name:'acerca de',route:'about',icon:'face'},
-    {name:'preguntas frecuentes',route:'question',icon:'question_answer'},
+  fillerNav =[
+    {name: 'Home', route: 'home', icon: 'home'},
+    {name: 'Contacto', route: 'contact', icon: 'contacts'},
+    {name: 'Acerca de', route: 'about', icon: 'face'},
+    {name: 'Preguntas frecuentes', route: 'question', icon: 'question_answer'},
   ]
 
   fillerContent = Array(50).fill(0).map(() =>
@@ -25,7 +24,7 @@ export class SidenavComponent implements OnInit {
        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
 
-  private _mobileQueryListener: () => void;
+  private _mobileQueryListener:  () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router:Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
