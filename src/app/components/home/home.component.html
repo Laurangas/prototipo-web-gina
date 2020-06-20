@@ -1,23 +1,38 @@
-<div class="container text-center">
+<div class="container">
   <!-- encabezado-->
-  <header>
+  <section>
+  <article>
+
+    <header>
     <mat-toolbar color="primary" class="title ">
-      Inicio
-  </mat-toolbar>
+      Resumen informativo
+    </mat-toolbar>
   </header>
 
-  <section>
-    <!-- /SECCION DE CONTENIDO INFORMATIVO-->
-    <article>
-      <!-- / ARTICULO DE INFORMACION -->
-      <header>
-        <!-- /CABECERA DEL LA INFORMACION -->
-        <br/>
-        <h2>Una piedra en el camino me dijo que tenia que rodar y rodar.</h2>
-      </header>
-      <img src="" alt=""/>
-      <!-- /IMAGEN-->
-      <div>
+  <div class="page-content">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxFlexFill fxLayoutGap="15px" fxLayoutAlign="center">
+      <mat-card class="card-picture" *ngFor="let picture of pictures">
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <span>{{picture.title}}</span>
+        </mat-card-title>
+        <mat-list>
+          <h3 matSubheader>Folders</h3>
+          <mat-list-item *ngFor="let folder of folders">
+             <mat-icon matListIcon>folder</mat-icon>
+             <h4 matLine>{{folder.name}}</h4>
+             <p matLine class="demo-2"> {{folder.updated}} </p>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <h3 matSubheader>Notes</h3>
+          <mat-list-item *ngFor="let note of notes">
+             <mat-icon matListIcon>note</mat-icon>
+             <h4 matLine>{{note.name}}</h4>
+             <p matLine class="demo-2"> {{note.updated}} </p>
+          </mat-list-item>
+       </mat-list>
+      </mat-card>
+    </div>
+
         <p class="display-3">Objetivo</p>
         <div class="bg-left text-center">
           <p>
