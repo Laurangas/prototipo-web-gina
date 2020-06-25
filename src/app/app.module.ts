@@ -36,6 +36,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -45,12 +46,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ContactComponent,
     AboutComponent,
     QuestionComponent,
-    HomeComponent,
-    SignInComponent,
-    SignUpComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent,
-    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +74,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   providers: [
     AuthService,
-    AngularFirestore
+    AngularFirestore,
+    FlexLayoutModule
   ],
   bootstrap: [AppComponent],
 })
