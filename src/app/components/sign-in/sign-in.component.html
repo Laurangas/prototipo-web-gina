@@ -1,11 +1,13 @@
+<header>
+  <mat-toolbar color="primary" class="title ">
+    <span class="mdi mdi-login"></span>
+    Iniciar sesión
+  </mat-toolbar>
+</header>
+<div class="page-content">
 <div class="container">
   <form class="form">
     <mat-form-field class="full-width">
-      <!-- <header>
-        <mat-toolbar color="primary" class="title ">
-          Iniciar sesión
-        </mat-toolbar>
-      </header> -->
       <mat-label>Usuario</mat-label>
       <input
         matInput
@@ -44,24 +46,24 @@
   mat-flat-button color="primary"
   (click)="authService.GoogleAuth()"
 >
-Iniciar sesión con Google
+<span class="mdi mdi-google"></span>Iniciar sesión con Google
 </button>
 <br>
 <br>
-
     <div class="point-me forgotPassword">
-      <span routerLink="/forgot-password">¿Olvidaste tu contraseña?</span>
+      <span routerLink="/forgot-password">¿Olvidó su contraseña?</span>
     </div>
 
     <div class="redirectToLogin">
       <span
-        >¿No tienes cuenta?<span
+        >¿No tiene cuenta?<span
           class="point-me redirect"
           routerLink="/register-user"
         >
-          ¡Regístrate!</span
+          Registrarse</span
         ></span
       >
     </div>
   </form>
+</div>
 </div>

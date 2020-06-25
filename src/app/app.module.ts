@@ -49,7 +49,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AboutComponent,
     QuestionComponent,
     HomeComponent,
-    SignInComponent
+    SignInComponent,
+    ForgotPasswordComponent,
+    DashboardComponent,
+    SignUpComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,

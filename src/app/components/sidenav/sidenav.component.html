@@ -22,6 +22,9 @@
       <button mat-menu-item [routerLink]="['../sign-in']">
         Inciar sesión
       </button>
+      <button mat-menu-item [routerLink]="['../sign-up']">
+        Registrarse
+      </button>
     </mat-menu>
 
   </mat-toolbar>
@@ -31,6 +34,7 @@
   >
     <mat-sidenav
       #snav
+      opened
       class="mat-elevation-z6"
       [mode]="mobileQuery.matches ? 'over' : 'side'"
       [fixedInViewport]=true

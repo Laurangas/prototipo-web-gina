@@ -17,7 +17,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 const routes: Routes = [
   // {path:'grilla', component:SidenavComponent},
 { path: 'sign-in', component: SignInComponent },
-{ path: 'register-user', component: SignUpComponent },
+{ path: 'sign-up', component: SignUpComponent },
 { path: 'dashboard', component: DashboardComponent },
 { path: 'forgot-password', component: ForgotPasswordComponent },
 { path: 'home', component:HomeComponent },
