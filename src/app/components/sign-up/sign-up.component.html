@@ -1,6 +1,6 @@
   <header>
     <mat-toolbar color="primary" class="title ">
-      <mat-icon>person_add</mat-icon>
+      <span class="mdi mdi-account-plus"></span>
       Registrarse
     </mat-toolbar>
   </header>
@@ -9,7 +9,9 @@
     <form class="form">
       <mat-form-field class="full-width">
         <mat-label
-          >Correo electrónico</mat-label
+          >
+          <span class="mdi mdi-email"></span>
+          Correo electrónico</mat-label
         >
         <input
           matInput
@@ -21,16 +23,18 @@
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <mat-label>Contraseña</mat-label>
+
+        <mat-label>
+          <span class="mdi mdi-key"></span>
+           Contraseña
+        </mat-label>
         <input
           matInput
           #userPwd
           placeholder="Introduce tu contraseña"
           [type]="hide ? 'password' : 'text'"
         />
-        <mat-icon class="point-me" matSuffix (click)="hide = !hide">{{
-          hide ? "visibility_off" : "visibility"
-        }}</mat-icon>
+        <span matSuffix class="mdi" (click)="hide = !hide" [ngClass]="{ 'mdi-eye-off': hide, 'mdi-eye': !hide}"></span>
       </mat-form-field>
 
 

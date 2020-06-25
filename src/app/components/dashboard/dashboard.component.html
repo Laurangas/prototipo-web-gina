@@ -28,8 +28,8 @@
             <mat-card-content>
             <mat-card-subtitle>Correo electrónico</mat-card-subtitle>
             <p>{{ user.email }}</p>
-            <p *ngIf="user.emailVerified else notVerified" >✔️ Correo electrónico verificado</p>
-            <ng-template #notVerified>⚠️ Correo electrónico no verificado</ng-template>
+            <p *ngIf="user.emailVerified else notVerified" ><span class="mdi mdi-shield-check"></span> Correo electrónico verificado</p>
+            <ng-template #notVerified> <span class="mdi mdi-shield-alert"></span> Correo electrónico no verificado</ng-template>
             </mat-card-content>
           </mat-card>
         </div>
