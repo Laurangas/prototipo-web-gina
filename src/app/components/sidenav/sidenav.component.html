@@ -11,20 +11,42 @@
     <h1 *ngIf="!mobileQuery.matches" class="example-app-name">AutoMaGa</h1>
     <div class="flex-spacer"></div>
 
-    <span class="mat-button-wrapper">
-      <button mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario"
-            matTooltip="Menú de usuario">
-      <mat-icon>account_circle</mat-icon> user
+    <span class="mat-button-wrapper" *ngIf="authService.userData as user; else preLogin">
+      <button mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
+      <img class="user-icon" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
+      {{user.displayName}}
       <mat-icon aria-hidden="true">arrow_drop_down</mat-icon>
     </button>
-    </span>
+
+  </span>
+
+  <ng-template class="mat-button-wrapper" #preLogin>
+    <button mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
+      <mat-icon>account_circle</mat-icon> Aún no ha iniciado sesión
+      <mat-icon aria-hidden="true">arrow_drop_down</mat-icon>
+    </button>
+  </ng-template>
+
     <mat-menu #userMenu="matMenu">
-      <button mat-menu-item [routerLink]="['../sign-in']">
-        Inciar sesión
-      </button>
-      <button mat-menu-item [routerLink]="['../sign-up']">
-        Registrarse
-      </button>
+      <span *ngIf="authService.userData else loginMenu">
+        <button mat-menu-item [routerLink]="['../dashboard']">
+          Página de usuario
+        </button>
+        <!-- Calling SignOut() Api from AuthService -->
+        <button mat-menu-item (click)="authService.SignOut()" [routerLink]="['../home']">
+          Cerrar sesión
+        </button>
+      </span>
+
+      <ng-template #loginMenu>
+        <button mat-menu-item [routerLink]="['../sign-in']">
+          Inciar sesión
+        </button>
+        <button mat-menu-item [routerLink]="['../sign-up']">
+          Registrarse
+        </button>
+      </ng-template>
+
     </mat-menu>
 
   </mat-toolbar>

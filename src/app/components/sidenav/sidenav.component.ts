@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,6 +9,15 @@ import {Router} from '@angular/router';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
+
+  constructor(changeDetectorRef: ChangeDetectorRef,
+    media:  MediaMatcher,
+    private router:Router,
+    public  authService: AuthService) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
   mobileQuery: MediaQueryList;
 
   fillerNav =[
@@ -26,17 +36,11 @@ export class SidenavComponent implements OnInit {
 
   private _mobileQueryListener:  () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router:Router) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
-  }
+  shouldRun = true;
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
-  shouldRun = true;
 
   grilla(){
     this.router.navigate(['/grilla'])
