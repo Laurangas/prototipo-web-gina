@@ -1,0 +1,47 @@
+<div
+  class="example-container"
+  [class.example-is-mobile]="mobileQuery.matches"
+>
+  <mat-toolbar color="primary" class="example-toolbar mat-elevation-z6">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span style="margin-left: 20px;"></span>
+    <img src="assets/img/logo.svg" alt="logo">
+    <h1 *ngIf="!mobileQuery.matches" class="example-app-name">AutoMaGa</h1>
+    <div class="flex-spacer"></div>
+    <a mat-button="" href="#" aria-label="Inicio de sesion"
+    class="mat-focus-indicator mat-button mat-button-base"
+    tabindex="0"
+    aria-disabled="false">
+    <span class="mat-button-wrapper">
+      <mat-icon>account_circle</mat-icon> user
+      <mat-icon aria-hidden="true">arrow_drop_down</mat-icon>
+    </span>
+    </a>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="example-sidenav-container"
+  >
+    <mat-sidenav
+      #snav
+      class="mat-elevation-z6"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]=true
+      fixedTopGap="64"
+    >
+      <mat-nav-list>
+        <a mat-list-item (click)="mobileQuery.matches ? snav.toggle() : ''"
+        [routerLink]="nav.route" *ngFor="let nav of fillerNav">
+          <mat-icon>{{ nav.icon }}</mat-icon
+          >&nbsp;{{ nav.name }}</a
+        >
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

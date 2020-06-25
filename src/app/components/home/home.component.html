@@ -1,0 +1,71 @@
+<div class="container text-center">
+  <!-- encabezado-->
+  <header>
+    <mat-toolbar color="primary" class="title ">
+      Inicio
+  </mat-toolbar>
+  </header>
+
+  <section>
+    <!-- /SECCION DE CONTENIDO INFORMATIVO-->
+    <article>
+      <!-- / ARTICULO DE INFORMACION -->
+      <header>
+        <!-- /CABECERA DEL LA INFORMACION -->
+        <br/>
+        <h2>Una piedra en el camino me dijo que tenia que rodar y rodar.</h2>
+      </header>
+      <img src="" alt=""/>
+      <!-- /IMAGEN-->
+      <div>
+        <p class="display-3">Objetivo</p>
+        <div class="bg-left text-center">
+          <p>
+            Se priorizará tener el sitio web para dar un control de stock en la
+            llantera, y/o en los camiones distribuidores de las llantas, para
+            llevar al tanto de la tienda con el dueño y el jefe de compras.
+            Contendrá información acerca de la ubicación de las llantas, su
+            estado, su uso, compra, entre otros.
+          </p>
+          <p>
+            Se tendrá presente un mejor manejo y un mayor uso como empresa de un
+            buen control de stock, para saber el numero de llantas existentes, y
+            así se priorizará que no haya un número de llantas inexistente.
+          </p>
+          <p>
+            dueño de la empresa llantera, espera ahorrar costos aprovechando al
+            máximo el inventario existente, si hay un inventario mínimo se
+            deberá avisar que se está acabando la existencia de las llantas, y
+            que el jefe compras pueda proveer de más llantas, su mantenimiento y
+            obtener mayores ganancias con el stock siempre lleno.
+          </p>
+        </div>
+        <p class="display-3">Alcance</p>
+        <div class="bg-left text-center">
+          <p>
+            La página web se basa en el control interno de llantas en transporte
+            pesado (Camiones) y su mantenimiento.
+          </p>
+        </div>
+        <p class="display-3">Publico al que esta dirigido</p>
+        <div class="bg-left text-center">
+          <p>
+            La Página Web cuenta con información detallada de activos internos
+            de una corporación
+          </p>
+          <ul>
+            Administracion Contabilidad Compras Pagos/Finanzas Almacen
+          </ul>
+        </div>
+      </div>
+      <!-- Agregamos la tabla de grid angular-->
+      <ag-grid-angular style="width: 602px; height: 280px;" class="ag-theme-alpine" [rowData]="rowData"
+        [columnDefs]="columnDefs">
+      </ag-grid-angular>
+    </article>
+  </section>
+  <footer id="main-footer">
+    <!-- /PIE DE PAGINA-->
+    <p>&copy; 2020 <a>EquipoUmizoomi</a></p>
+  </footer>
+</div>

@@ -1,0 +1,33 @@
+<p></p>
+<div class="container">
+  <form class="form">
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        [formControl]="emailFormControl"
+        [errorStateMatcher]="matcher"
+        placeholder="Introduce tu email"
+      />
+      <mat-error
+        *ngIf="
+          emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')
+        "
+      >
+        Por favor introduce un email correcto
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        El correo es <strong>requerido</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Comentario</mat-label>
+      <textarea matInput
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="5"
+      cdkAutosizeMaxRows="15"></textarea>
+    </mat-form-field>
+  </form>
+</div>
