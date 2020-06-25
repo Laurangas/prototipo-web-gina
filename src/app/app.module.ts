@@ -25,6 +25,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { AngularFireAuthModule } from 'angularfire2/auth';//Referente a firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database'; //, FirebaseListObservable
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -46,7 +48,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ContactComponent,
     AboutComponent,
     QuestionComponent,
-    HomeComponent
+    HomeComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    MatMenuModule,
+    MatTooltipModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule

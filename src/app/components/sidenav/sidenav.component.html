@@ -10,15 +10,20 @@
     <img src="assets/img/logo.svg" alt="logo">
     <h1 *ngIf="!mobileQuery.matches" class="example-app-name">AutoMaGa</h1>
     <div class="flex-spacer"></div>
-    <a mat-button="" href="#" aria-label="Inicio de sesion"
-    class="mat-focus-indicator mat-button mat-button-base"
-    tabindex="0"
-    aria-disabled="false">
+
     <span class="mat-button-wrapper">
+      <button mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario"
+            matTooltip="Menú de usuario">
       <mat-icon>account_circle</mat-icon> user
       <mat-icon aria-hidden="true">arrow_drop_down</mat-icon>
+    </button>
     </span>
-    </a>
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item [routerLink]="['../sign-in']">
+        Inciar sesión
+      </button>
+    </mat-menu>
+
   </mat-toolbar>
 
   <mat-sidenav-container
@@ -41,6 +46,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="content">
+      <!-- salida de componentes -->
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
