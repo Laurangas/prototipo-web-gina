@@ -24,6 +24,18 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';//Referente a firebase
+import { AngularFireDatabaseModule } from 'angularfire2/database'; //, FirebaseListObservable
+import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -56,9 +68,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
+  ],
+  providers: [
+    AuthService,
+    AngularFirestore,
     FlexLayoutModule
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
