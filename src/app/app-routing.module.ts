@@ -13,17 +13,18 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
+
 const routes: Routes = [
-  //{path:'grilla', component:SidenavComponent},
+  // {path:'grilla', component:SidenavComponent},
 { path: 'sign-in', component: SignInComponent },
-{ path: 'register-user', component: SignUpComponent },
+{ path: 'sign-up', component: SignUpComponent },
 { path: 'dashboard', component: DashboardComponent },
 { path: 'forgot-password', component: ForgotPasswordComponent },
-  {path:'home', component:HomeComponent},
-  {path:'contact', component:ContactComponent},
-  {path:'about', component:AboutComponent},
-  {path:'question', component:QuestionComponent}
-  //{path:'**',pathMatch:'full',redirectTo:'home'}
+{ path: 'home', component:HomeComponent },
+{ path: 'contact', component:ContactComponent },
+{ path: 'about', component:AboutComponent },
+{ path: 'question', component:QuestionComponent }
+  // {path:'**',pathMatch:'full',redirectTo:'home'}
 
 ];
 

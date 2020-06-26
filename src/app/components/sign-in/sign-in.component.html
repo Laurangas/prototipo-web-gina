@@ -1,42 +1,72 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-  
-      <div class="authBlock">
-        <h3>Sign In</h3>
-        <div class="formGroup">
-          <input type="text" class="formControl" placeholder="Username" #userName required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPassword required>
-        </div>
-  
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-        </div>
-  
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-  
-        <!-- Calling GoogleAuth Api from AuthService -->
-        <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Log in with Google
-          </button>
-        </div>
-  
-        <div class="forgotPassword">
-          <span routerLink="/forgot-password">Forgot Password?</span>
-        </div>
-      </div>
-  
-      <div class="redirectToLogin">
-        <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
-      </div>
-  
+<header>
+  <mat-toolbar color="primary" class="title ">
+    <span class="mdi mdi-login"></span>
+    Iniciar sesión
+  </mat-toolbar>
+</header>
+<div class="page-content">
+<div class="container">
+  <form class="form">
+    <mat-form-field class="full-width">
+      <mat-label>
+        <span class="mdi mdi-account"></span>
+        Usuario
+      </mat-label>
+      <input
+        matInput
+        #userName
+        [formControl]="emailFormControl"
+        [errorStateMatcher]="matcher"
+        placeholder="Introduce tu usuario"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>
+        <span class="mdi mdi-key"></span>
+        Contraseña</mat-label>
+      <input
+        matInput
+        #userPassword
+        placeholder="Introduce tu contraseña"
+        [type]="hide ? 'password' : 'text'"
+      />
+      <span matSuffix class="mdi" (click)="hide = !hide" [ngClass]="{ 'mdi-eye-off': hide, 'mdi-eye': !hide}"></span>
+    </mat-form-field>
+
+
+    <!-- Calling SignIn Api from AuthService -->
+    <button
+      mat-flat-button color="primary"
+      (click)="authService.SignIn(userName.value, userPassword.value)"
+    >
+    Iniciar sesión
+  </button>
+  <br>
+  <br>
+  <!-- Calling GoogleAuth Api from AuthService -->
+  <button
+  mat-flat-button color="primary"
+  (click)="authService.GoogleAuth()"
+>
+<span class="mdi mdi-google"></span>Iniciar sesión con Google
+</button>
+<br>
+<br>
+    <div class="point-me forgotPassword">
+      <span routerLink="/forgot-password">¿Olvidó su contraseña?</span>
     </div>
-  </div>
-  
+
+    <div class="redirectToLogin">
+      <span
+        >¿No tiene cuenta?<span
+          class="point-me redirect"
+          routerLink="/sign-up"
+        >
+          Registrarse</span
+        ></span
+      >
+    </div>
+  </form>
+</div>
+</div>

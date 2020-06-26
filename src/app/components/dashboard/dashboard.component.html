@@ -1,57 +1,44 @@
-<!-- Top navigation -->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-      <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
-    </a>
-  </nav>
-  
-  <!-- Sidebar navigation -->
-  <div class="container-fluid">
-    <div class="row">
-  
-      <nav class="col-md-2 d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active">
-                <i class="fas fa-user"></i>User Profile
-              </a>
-            </li>
-            <!-- Calling SignOut() Api from AuthService -->
-            <li class="nav-item">
-              <a class="nav-link" (click)="authService.SignOut()">
-                <i class="fas fa-sign-out-alt"></i>Log out
-              </a>
-            </li>
-          </ul>
+<div class="container">
+  <section>
+    <article>
+      <header>
+        <mat-toolbar color="primary" class="title">
+          Página de usuario
+        </mat-toolbar>
+      </header>
+
+      <div class="page-content" *ngIf="authService.userData as user">
+        <div
+          fxLayout="row"
+          fxLayout.xs="column"
+          fxLayoutWrap
+          fxFlexFill
+          fxLayoutGap="15px"
+          fxLayoutAlign="center"
+        >
+          <mat-card class="card-picture">
+            <img mat-card-md-image class="user-picture" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
+            <mat-card-title class="user-name" fxLayout.gt-xs="row" fxLayout.xs="column">
+            {{ user.displayName ? user.displayName : "Usuario" }}
+            </mat-card-title>
+            <mat-card-content>
+            <mat-card-subtitle>ID de usuario</mat-card-subtitle>
+            <p> {{ user.uid }}</p>
+            </mat-card-content>
+            <mat-card-content>
+            <mat-card-subtitle>Correo electrónico</mat-card-subtitle>
+            <p>{{ user.email }}</p>
+            <p *ngIf="user.emailVerified else notVerified" ><span class="mdi mdi-shield-check"></span> Correo electrónico verificado</p>
+            <ng-template #notVerified> <span class="mdi mdi-shield-alert"></span> Correo electrónico no verificado</ng-template>
+            </mat-card-content>
+          </mat-card>
         </div>
-      </nav>
-  
-      <!-- Main content -->
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="inner-adjust">
-  
-          <div class="pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">User Profile</h1>
-          </div>
-          <!-- Show user data when logged in -->
-          <div class="row" *ngIf="authService.userData as user">
-            <div class="col-md-12">
-              <div class="media">
-                <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                  alt="{{user.displayName}}">
-                <div class="media-body">
-                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                  <p>User ID: <strong>{{user.uid}}</strong></p>
-                  <p>Email: <strong>{{user.email}}</strong></p>
-                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-      </main>
-  
-    </div>
-  </div>
+      </div>
+    </article>
+  </section>
+
+  <footer id="main-footer">
+    <br /><br />
+    <p>&copy; 2020 <a>EquipoUmizoomi</a></p>
+  </footer>
+</div>

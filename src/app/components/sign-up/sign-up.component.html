@@ -1,36 +1,71 @@
-<div class="displayTable">
-    <div class="displayTableCell">
-  
-      <div class="authBlock">
-        <h3>Sign Up</h3>
-  
-        <div class="formGroup">
-          <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPwd required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-        </div>
-  
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-  
-        <!-- Continue with Google -->
-        <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Continue with Google
-          </button>
-        </div>
-  
+  <header>
+    <mat-toolbar color="primary" class="title ">
+      <span class="mdi mdi-account-plus"></span>
+      Registrarse
+    </mat-toolbar>
+  </header>
+  <div class="page-content">
+  <div class="container">
+    <form class="form">
+      <mat-form-field class="full-width">
+        <mat-label
+          >
+          <span class="mdi mdi-email"></span>
+          Correo electrónico</mat-label
+        >
+        <input
+          matInput
+          #userEmail
+          [formControl]="emailFormControl"
+          [errorStateMatcher]="matcher"
+          placeholder="Introduce tu email"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+
+        <mat-label>
+          <span class="mdi mdi-key"></span>
+           Contraseña
+        </mat-label>
+        <input
+          matInput
+          #userPwd
+          placeholder="Introduce tu contraseña"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <span matSuffix class="mdi" (click)="hide = !hide" [ngClass]="{ 'mdi-eye-off': hide, 'mdi-eye': !hide}"></span>
+      </mat-form-field>
+
+
+      <!-- Calling SignIn Api from AuthService -->
+      <button
+        mat-flat-button color="primary"
+        (click)="authService.SignUp(userEmail.value, userPwd.value)"
+      >
+      Registrarse
+    </button>
+    <br>
+    <br>
+    <!-- Calling GoogleAuth Api from AuthService -->
+    <button
+    mat-flat-button color="primary"
+    (click)="authService.GoogleAuth()"
+  >
+  <span class="mdi mdi-google"></span>Continuar con Google
+  </button>
+  <br>
+  <br>
       <div class="redirectToLogin">
-        <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+        <span
+          >¿Ya tiene cuenta?<span
+            class="point-me redirect"
+            routerLink="/sign-in"
+          >
+            Iniciar sesión</span
+          ></span
+        >
       </div>
-    </div>
-  
+    </form>
+  </div>
   </div>
