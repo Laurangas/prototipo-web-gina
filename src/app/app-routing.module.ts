@@ -1,3 +1,4 @@
+import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'question', component: QuestionComponent },
+  { path: 'alta', component: QuestionComponent },
   { path: '404', component: NotFoundComponent },
+  { path: 'app/registro-llanta', component: RegistroLlantaComponent},
   { path: '**', redirectTo: '/404' },
 ];
 

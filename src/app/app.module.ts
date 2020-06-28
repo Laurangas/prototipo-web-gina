@@ -40,6 +40,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     DashboardComponent,
     SignUpComponent,
     VerifyEmailComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RegistroLlantaComponent
   ],
   imports: [
     BrowserModule,
