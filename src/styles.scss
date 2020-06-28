@@ -38,10 +38,6 @@ h1, h2, h3, h4, h5 {
   width: 100%;
 }
 
-.half-width {
-  width: 50%!important;
-}
-
 .flex-spacer {
   -webkit-box-flex: 1;
   flex-grow: 1;
@@ -80,10 +76,24 @@ h1, h2, h3, h4, h5 {
   margin-right: 5px;
 }
 
-.mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
+.mat-radio-group {
+  padding: 10px 0px 20px 5px;
 }
 
-.mat-radio-group {
-  padding: 10px 0 20px 0;
+.example-radio-button {
+  margin: 5px;
+}
+
+.mat-form-field,
+.mat-form-button {
+  min-width: 40%;
+  padding: 0 10px;
+}
+
+.mat-radio-button {
+  margin-right: 18px;
+}
+
+.mat-flat-button {
+  margin-left: 10px!important;
 }

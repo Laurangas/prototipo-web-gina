@@ -1,106 +1,65 @@
 <div class="container">
   <header>
-    <mat-toolbar color="primary" class="title ">
+    <mat-toolbar color="primary" class="title">
       Registro de Entrada de Llantas
     </mat-toolbar>
   </header>
-
-  <div class="page-content">
-
-
-    <mat-form-field class="half-width">
-      <mat-label>Comentario</mat-label>
-      <input matInput/>
-    </mat-form-field>
-
-  <div class="row mg-5">
-    <mat-form-field class="half-width">
-
+  <div
+    class="page-content"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="7px"
+    fxLayoutGap.sm="0px"
+  >
+    <mat-form-field fxFlex>
       <mat-label>Código de la Llanta</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Marca</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Modelo</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Tipo</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Tamaño de ring</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Ancho de la llanta</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row" >
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Profundidad en milímetros, de nueva</mat-label>
-
-      <input matInput >
-</mat-form-field>
-  </div>
-  <div class="row">
-    <mat-form-field class="half-width">
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
       <mat-label>Rendimiento según fabricante en kilómetros</mat-label>
-
-      <input matInput >
-</mat-form-field>
-</div>
-<div class="row">
-  <mat-form-field class="half-width">
-
-    <mat-label>Costo</mat-label>
-
-    <input matInput >
-</mat-form-field>
-</div>
-<div class="row">
-  <mat-form-field class="half-width">
-
-    <mat-label>Profundidad a la que se debe cambiar la llanta, en milímetros</mat-label>
-
-    <input matInput >
-</mat-form-field>
-</div>
-
-<div class="mat-radio-group">
-<mat-radio-group label="Está vulcanizada">
-  <mat-radio-button value="1">Sí está vulcanizada</mat-radio-button>
-  <mat-radio-button value="2">No está vulcanizada</mat-radio-button>
-</mat-radio-group>
-</div>
-
-
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <mat-label>Costo</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field fxFlex>
+      <mat-label
+        >Profundidad a la que se debe cambiar la llanta, en
+        milímetros</mat-label
+      >
+      <input matInput />
+    </mat-form-field>
+    <div class="mat-radio-group">
+      <mat-radio-group label="Está vulcanizada">
+        <mat-radio-button value="1">Sí está vulcanizada</mat-radio-button>
+        <mat-radio-button value="2">No está vulcanizada</mat-radio-button>
+      </mat-radio-group>
+    </div>
     <button mat-flat-button color="primary">Registrar</button>
+  </div>
 </div>
