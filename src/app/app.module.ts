@@ -41,6 +41,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
+import { ModificarLlantaComponent } from './components/app/modificar-llanta/modificar-llanta.component';
+import { ReporteTotalLlantasComponent } from './components/app/reporte-total-llantas/reporte-total-llantas.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { RegistroLlantaComponent } from './components/app/registro-llanta/regist
     SignUpComponent,
     VerifyEmailComponent,
     NotFoundComponent,
-    RegistroLlantaComponent
+    RegistroLlantaComponent,
+    ModificarLlantaComponent,
+    ReporteTotalLlantasComponent
   ],
   imports: [
     BrowserModule,
