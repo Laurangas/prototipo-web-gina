@@ -1,3 +1,4 @@
+import { DialogComponent } from './components/shared/dialog/dialog.component';
 import { ReporteTotalLlantasComponent } from './components/app/reporte-total-llantas/reporte-total-llantas.component';
 import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
 import { NgModule } from '@angular/core';
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'app/registro-llanta', component: RegistroLlantaComponent},
   { path: 'app/modificar-llanta', component: ModificarLlantaComponent},
   { path: 'app/reporte-llanta', component: ReporteTotalLlantasComponent},
+  { path: 'dialog', component: DialogComponent},
   { path: '**', redirectTo: '/404' },
 ];
 

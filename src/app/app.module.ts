@@ -1,3 +1,4 @@
+import { DialogModule } from './components/shared/dialog/dialog.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -43,6 +44,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
 import { ModificarLlantaComponent } from './components/app/modificar-llanta/modificar-llanta.component';
 import { ReporteTotalLlantasComponent } from './components/app/reporte-total-llantas/reporte-total-llantas.component';
+import { DialogComponent } from './components/shared/dialog/dialog.component';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -73,21 +76,22 @@ import { ReporteTotalLlantasComponent } from './components/app/reporte-total-lla
     MatToolbarModule,
     MatSelectModule,
     MatIconModule,
-    MatButtonModule,
+    DialogModule,
     RouterModule.forRoot([]),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
     ReactiveFormsModule,
     MatRadioModule,
     MatCardModule,
     MatInputModule,
-    MatButtonModule,
     MatMenuModule,
     MatTooltipModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatDialogModule
   ],
   providers: [
     AuthService,

@@ -1,61 +1,94 @@
-  <header>
-    <mat-toolbar color="primary" class="title ">
-      <span class="mdi mdi-account-plus"></span>
-      Registrarse
-    </mat-toolbar>
-  </header>
-  <div class="page-content">
+<header>
+  <mat-toolbar color="primary" class="title">
+    <span class="mdi mdi-account-plus"></span>
+    Registrarse
+  </mat-toolbar>
+</header>
+<div class="page-content">
   <div class="container">
-    <form class="form">
+    <form class="form" [formGroup]="emailForm">
       <mat-form-field class="full-width">
-        <mat-label
-          >
-          <span class="mdi mdi-email"></span>
-          Correo electrónico</mat-label
-        >
-        <input
-          matInput
-          #userEmail
-          [formControl]="emailFormControl"
-          [errorStateMatcher]="matcher"
-          placeholder="Introduce tu email"
-        />
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-
         <mat-label>
-          <span class="mdi mdi-key"></span>
-           Contraseña
+          <span class="mdi mdi-email"></span>
+          Correo electrónico
         </mat-label>
         <input
           matInput
-          #userPwd
-          placeholder="Introduce tu contraseña"
-          [type]="hide ? 'password' : 'text'"
+          #userEmail
+          formControlName="email"
+          [errorStateMatcher]="matcher"
+          placeholder="Correo electrónico"
         />
-        <span matSuffix class="mdi" (click)="hide = !hide" [ngClass]="{ 'mdi-eye-off': hide, 'mdi-eye': !hide}"></span>
+        <mat-error *ngIf="emailForm.hasError('email', 'email')">
+          Este correo electrónico no es válido.
+        </mat-error>
       </mat-form-field>
-
-
+    </form>
+    <form class="form" [formGroup]="myForm">
+      <mat-form-field class="full-width">
+        <mat-label>
+          <span class="mdi mdi-key"></span>
+          Contraseña
+        </mat-label>
+        <input
+          matInput
+          placeholder="Contraseña"
+          formControlName="password"
+          [type]="hideA ? 'password' : 'text'"
+        />
+        <span
+        matSuffix
+        class="mdi"
+        (click)="hideA = !hideA"
+        [ngClass]="{ 'mdi-eye-off': hideA, 'mdi-eye': !hideA }"
+        ></span>
+        <mat-error *ngIf="myForm.hasError('required', 'password')">
+          Por favor ingrese su contraseña
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>
+          <span class="mdi mdi-key"></span>
+          Confirmar Contraseña
+        </mat-label>
+        <input
+          #userPwd
+          matInput
+          placeholder="Confirmar contraseña"
+          formControlName="confirmPassword"
+          [errorStateMatcher]="matcher"
+          [type]="hideB ? 'password' : 'text'"
+        />
+        <span
+        matSuffix
+        class="mdi"
+        (click)="hideB = !hideB"
+        [ngClass]="{ 'mdi-eye-off': hideB, 'mdi-eye': !hideB }"
+        ></span>
+        <mat-error *ngIf="myForm.hasError('notSame')">
+          Las contraseñas no coinciden
+        </mat-error>
+      </mat-form-field>
       <!-- Calling SignIn Api from AuthService -->
       <button
-        mat-flat-button color="primary"
+        mat-flat-button
+        color="primary"
         (click)="authService.SignUp(userEmail.value, userPwd.value)"
       >
-      Registrarse
-    </button>
-    <br>
-    <br>
-    <!-- Calling GoogleAuth Api from AuthService -->
-    <button
-    mat-flat-button color="primary"
-    (click)="authService.GoogleAuth()"
-  >
-  <span class="mdi mdi-google"></span>Continuar con Google
-  </button>
-  <br>
-  <br>
+        Registrarse
+      </button>
+      <br />
+      <br />
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="authService.GoogleAuth()"
+      >
+        <span class="mdi mdi-google"></span>Continuar con Google
+      </button>
+      <br />
+      <br />
       <div class="redirectToLogin">
         <span
           >¿Ya tiene cuenta?<span
@@ -68,4 +101,4 @@
       </div>
     </form>
   </div>
-  </div>
+</div>
