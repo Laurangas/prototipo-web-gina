@@ -23,6 +23,7 @@ export class SidenavComponent implements OnInit {
     {name: 'Contacto', route: 'contact', icon: 'mdi-contacts'},
     {name: 'Acerca de', route: 'about', icon: 'mdi-baby-face'},
     {name: 'Preguntas frecuentes', route: 'question', icon: 'mdi-frequently-asked-questions'},
+    {name: 'Alta de llantas', route: 'app/registro-llanta', icon: 'mdi-plus-circle'},
   ];
 
   fillerContent = Array(50).fill(0).map(() =>

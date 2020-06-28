@@ -39,6 +39,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ForgotPasswordComponent,
     DashboardComponent,
     SignUpComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    NotFoundComponent,
+    RegistroLlantaComponent
   ],
   imports: [
     BrowserModule,
