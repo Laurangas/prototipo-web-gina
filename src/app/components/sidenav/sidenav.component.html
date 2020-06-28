@@ -3,7 +3,9 @@
   [class.example-is-mobile]="mobileQuery.matches"
 >
   <mat-toolbar color="primary" class="example-toolbar mat-elevation-z6">
-    <button mat-icon-button (click)="snav.toggle()">
+    <button
+    class="font-resize"
+    mat-icon-button (click)="snav.toggle()">
       <span class="mdi mdi-menu"></span>
     </button>
     <span style="margin-left: 20px;"></span>
@@ -11,8 +13,43 @@
     <h1 *ngIf="!mobileQuery.matches" class="example-app-name">AutoMaGa</h1>
     <div class="flex-spacer"></div>
 
+
+
+    <span class="mat-button-wrapper">
+      <button
+      class="font-resize"
+      mat-button [matMenuTriggerFor]="accMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
+      <span class="mdi mdi-menu-down">
+        <span class="mdi mdi-human-wheelchair"></span>
+      </span>
+    </button>
+
+  </span>
+
+    <mat-menu #accMenu="matMenu">
+
+        <button
+        class="font-resize"
+        (click)="fontSizeService.increaseFontSize()"
+        mat-menu-item>
+          <span
+          class="mdi mdi-format-font-size-increase"></span>
+        </button>
+
+        <button
+        class="font-resize"
+        (click)="fontSizeService.decreaseFontSize()"
+        mat-menu-item>
+          <span
+          class="mdi mdi-format-font-size-decrease"></span>
+        </button>
+
+    </mat-menu>
+
     <span class="mat-button-wrapper" *ngIf="authService.userData as user; else preLogin">
-      <button mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
+      <button
+      class="font-resize"
+      mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
       <img class="user-icon" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
       {{user.displayName}}
       <span class="mdi mdi-menu-down"></span>
@@ -21,33 +58,50 @@
   </span>
 
   <ng-template class="mat-button-wrapper" #preLogin>
-    <button mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
+    <button
+    class="font-resize"
+    mat-button
+    [matMenuTriggerFor]="userMenu"
+    aria-label="Menú de usuario"
+    matTooltip="Menú de usuario"
+    class="font-resize">
       <span class="mdi mdi-account-circle"></span> Aún no ha iniciado sesión
       <span class="mdi mdi-menu-down"></span>
     </button>
   </ng-template>
 
+
+
     <mat-menu #userMenu="matMenu">
       <span *ngIf="authService.userData else loginMenu">
-        <button mat-menu-item [routerLink]="['../dashboard']">
+        <button
+        class="font-resize"
+        mat-menu-item [routerLink]="['../dashboard']">
           Página de usuario
         </button>
         <!-- Calling SignOut() Api from AuthService -->
-        <button mat-menu-item (click)="authService.SignOut()" [routerLink]="['../home']">
+        <button
+        class="font-resize"
+        mat-menu-item (click)="authService.SignOut()" [routerLink]="['../home']">
           Cerrar sesión
         </button>
       </span>
 
       <ng-template #loginMenu>
-        <button mat-menu-item [routerLink]="['../sign-in']">
+        <button
+        class="font-resize"
+        mat-menu-item [routerLink]="['../sign-in']">
           Inciar sesión
         </button>
-        <button mat-menu-item [routerLink]="['../sign-up']">
+        <button
+        class="font-resize"
+        mat-menu-item [routerLink]="['../sign-up']">
           Registrarse
         </button>
       </ng-template>
 
     </mat-menu>
+
 
   </mat-toolbar>
 
@@ -63,7 +117,9 @@
       fixedTopGap="64"
     >
       <mat-nav-list>
-        <a mat-list-item (click)="mobileQuery.matches ? snav.toggle() : ''"
+        <a
+        class="font-resize"
+        mat-list-item (click)="mobileQuery.matches ? snav.toggle() : ''"
         [routerLink]="nav.route" *ngFor="let nav of fillerNav">
           <span class="mdi {{ nav.icon }}"></span>&nbsp;{{ nav.name }}</a
         >
