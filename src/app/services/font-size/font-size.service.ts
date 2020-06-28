@@ -51,7 +51,6 @@ export class FontSizeService {
   updateFontSize() {
     // obtener todos los elementos con la clase 'font'size-variable'
     const y = document.getElementsByClassName('font-size-variable') as HTMLCollectionOf<HTMLElement>;
-    console.log(y);
 
     let currentElementFontSize: number;
     let i: number;
