@@ -19,11 +19,13 @@ export class SidenavComponent implements OnInit {
   mobileQuery: MediaQueryList;
 
   fillerNav = [
-    {name: 'Home', route: 'home', icon: 'mdi-home'},
-    {name: 'Contacto', route: 'contact', icon: 'mdi-contacts'},
-    {name: 'Acerca de', route: 'about', icon: 'mdi-baby-face'},
-    {name: 'Preguntas frecuentes', route: 'question', icon: 'mdi-frequently-asked-questions'},
+    // {name: 'Home', route: 'home', icon: 'mdi-home'},
+    // {name: 'Contacto', route: 'contact', icon: 'mdi-contacts'},
+    // {name: 'Acerca de', route: 'about', icon: 'mdi-baby-face'},
+    // {name: 'Preguntas frecuentes', route: 'question', icon: 'mdi-frequently-asked-questions'},
     {name: 'Alta de llantas', route: 'app/registro-llanta', icon: 'mdi-plus-circle'},
+    {name: 'Modificar llantas', route: 'app/modificar-llanta', icon: 'mdi-circle-edit-outline'},
+    {name: 'Reporte de llantas', route: 'app/reporte-llanta', icon: 'mdi-circle-edit-outline'},
   ];
 
   fillerContent = Array(50).fill(0).map(() =>
