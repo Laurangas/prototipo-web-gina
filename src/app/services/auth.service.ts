@@ -43,7 +43,9 @@ export class AuthService {
         });
         this.SetUserData(result.user);
       }).catch((error) => {
-        this.dialogModule.openDialog('mdi-alert-circle-outline', 'Error al iniciar sesión', error.message);
+        this.dialogModule.openDialog('mdi-alert-circle-outline',
+        'Error al iniciar sesión',
+        'Ha ocurrido un error al iniciar sesión.', error.message);
       });
   }
 
@@ -57,7 +59,10 @@ export class AuthService {
         this.SetUserData(result.user);
         this.router.navigate(['dashboard']);
       }).catch((error) => {
-        this.dialogModule.openDialog('mdi-alert-circle-outline', 'Error al registrar', error.message);
+        this.dialogModule.openDialog('mdi-alert-circle-outline',
+        'Error al registrar',
+        'Ha ocurrido un error al realizar el registro',
+        error.message);
       });
   }
 
@@ -100,7 +105,10 @@ export class AuthService {
         });
        this.SetUserData(result.user);
     }).catch((error) => {
-      this.dialogModule.openDialog('mdi-alert-circle-outline', 'Error al inciar sesión', error.message);
+      this.dialogModule.openDialog('mdi-alert-circle-outline',
+      'Error al inciar sesión',
+      'Ha ocurrido un error al iniciar sesión.',
+      error.message);
     });
   }
 

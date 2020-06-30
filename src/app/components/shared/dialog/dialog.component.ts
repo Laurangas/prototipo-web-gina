@@ -5,6 +5,7 @@ export interface DialogData {
   icon: string;
   title: string;
   content: string;
+  advanced: string;
 }
 
 @Component({

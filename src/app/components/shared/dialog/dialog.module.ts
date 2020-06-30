@@ -20,9 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
 export class DialogModule {
   constructor(public dialog: MatDialog) {}
 
-  openDialog(icon: string, title: string, content: string): void {
+  openDialog(icon: string, title: string, content: string, advanced: string = ''): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: {icon, title, content}
+      data: {icon, title, content, advanced}
     });
   }
 

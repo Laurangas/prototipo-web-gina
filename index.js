@@ -1,7 +1,9 @@
 const express = require('express');
-
-const port = 3000;
+const cors = require('cors');
+const port = 4200;
 const app = express();
+
+app.use(cors());
 
 app.use(express.static('dist'));
 

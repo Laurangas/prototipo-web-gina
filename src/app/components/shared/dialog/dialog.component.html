@@ -1,5 +1,12 @@
 <h1 mat-dialog-title><span class="mdi {{data.icon}}"></span>{{data.title}}</h1>
-<div mat-dialog-content>{{data.content}}</div>
+<div mat-dialog-content>
+  <p>
+    {{data.content}}
+  </p>
+  <code>
+    {{data.advanced}}
+  </code>
+</div>
 <div mat-dialog-actions>
   <button mat-button [mat-dialog-close]=true>Cerrar</button>
 </div>

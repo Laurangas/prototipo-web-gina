@@ -6,9 +6,11 @@
           Página de usuario
         </mat-toolbar>
       </header>
-
+      <p class="font-size-variable page-content">Prueba</p>
       <div class="page-content" *ngIf="authService.userData as user">
+
         <div
+          (load)="this.fontSizeService.updateFontSize();"
           fxLayout="row"
           fxLayout.xs="column"
           fxLayoutWrap
@@ -16,20 +18,22 @@
           fxLayoutGap="15px"
           fxLayoutAlign="center"
         >
+
+
           <mat-card class="card-picture">
             <img mat-card-md-image class="user-picture" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
-            <mat-card-title class="user-name" fxLayout.gt-xs="row" fxLayout.xs="column">
+            <mat-card-title class="user-name font-size-variable" fxLayout.gt-xs="row" fxLayout.xs="column">
             {{ user.displayName ? user.displayName : "Usuario" }}
             </mat-card-title>
             <mat-card-content>
-            <mat-card-subtitle>ID de usuario</mat-card-subtitle>
-            <p> {{ user.uid }}</p>
+            <mat-card-subtitle class="font-size-variable">ID de usuario</mat-card-subtitle>
+            <p class="font-size-variable"> {{ user.uid }}</p>
             </mat-card-content>
             <mat-card-content>
-            <mat-card-subtitle>Correo electrónico</mat-card-subtitle>
-            <p>{{ user.email }}</p>
-            <p *ngIf="user.emailVerified else notVerified" ><span class="mdi mdi-shield-check"></span> Correo electrónico verificado</p>
-            <ng-template #notVerified> <span class="mdi mdi-shield-alert"></span> Correo electrónico no verificado</ng-template>
+            <mat-card-subtitle class="font-size-variable">Correo electrónico</mat-card-subtitle>
+            <p class="font-size-variable">{{ user.email }}</p>
+            <p class="font-size-variable" *ngIf="user.emailVerified else notVerified" ><span class="mdi mdi-shield-check"></span> Correo electrónico verificado</p>
+            <ng-template #notVerified><p class="font-size-variable"> <span class="mdi mdi-shield-alert"></span> Correo electrónico no verificado</p></ng-template>
             </mat-card-content>
           </mat-card>
         </div>
@@ -39,6 +43,6 @@
 
   <footer id="main-footer">
     <br /><br />
-    <p>&copy; 2020 <a>EquipoUmizoomi</a></p>
+    <p class="font-size-variable">&copy; 2020 <a>EquipoUmizoomi</a></p>
   </footer>
 </div>

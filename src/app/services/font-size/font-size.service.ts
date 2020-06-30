@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router';
+import { Router, NavigationEnd, ResolveEnd, Event as NavigationEvent } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +65,8 @@ export class FontSizeService {
 
       // actualiza el tamaño de fuente
       y[i].style.fontSize = currentElementFontSize + this.step + 'px';
+      console.log(y[i]);
+      console.log( y[i].style.fontSize + "curr" + currentElementFontSize);
     }
   }
 }

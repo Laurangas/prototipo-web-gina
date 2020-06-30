@@ -46,6 +46,7 @@ import { ModificarLlantaComponent } from './components/app/modificar-llanta/modi
 import { ReporteTotalLlantasComponent } from './components/app/reporte-total-llantas/reporte-total-llantas.component';
 import { DialogComponent } from './components/shared/dialog/dialog.component';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,

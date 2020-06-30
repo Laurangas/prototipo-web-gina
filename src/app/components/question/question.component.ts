@@ -1,6 +1,8 @@
+import { MailerService } from './../../services/mailer/mailer.service';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -16,6 +18,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 
 export class QuestionComponent {
+
+  constructor(public mailerService: MailerService) {}
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,

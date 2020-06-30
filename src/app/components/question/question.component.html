@@ -4,6 +4,7 @@
     <mat-form-field class="full-width">
       <mat-label>Email</mat-label>
       <input
+        #msgEmail
         matInput
         [formControl]="emailFormControl"
         [errorStateMatcher]="matcher"
@@ -21,13 +22,36 @@
         El correo es <strong>requerido</strong>
       </mat-error>
     </mat-form-field>
+
+
+    <mat-form-field class="full-width">
+      <mat-label>Asunto</mat-label>
+      <input
+        #msgAsunto
+        matInput
+        [formControl]="emailFormControl"
+        [errorStateMatcher]="matcher"
+        placeholder="Asunto"
+      />
+    </mat-form-field>
+
     <mat-form-field class="full-width">
       <mat-label>Comentario</mat-label>
-      <textarea matInput
+      <textarea
+      #msgTexto
+      matInput
       cdkTextareaAutosize
       #autosize="cdkTextareaAutosize"
       cdkAutosizeMinRows="5"
       cdkAutosizeMaxRows="15"></textarea>
     </mat-form-field>
+
+    <button
+    mat-button
+    mat-flat-button
+    color="primary"
+    (click)="mailerService.sendMail(msgEmail.value, msgAsunto.value, msgTexto.value)">
+    Enviar correo
+    </button>
   </form>
 </div>
