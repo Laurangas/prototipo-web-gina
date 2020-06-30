@@ -114,7 +114,7 @@
       [fixedInViewport]=true
       fixedTopGap="64"
     >
-      <mat-nav-list>
+      <mat-nav-list *ngIf="!authService.userData else adminMenu" >
         <a
         class="font-resize"
         mat-list-item (click)="mobileQuery.matches ? snav.toggle() : ''"
@@ -122,6 +122,18 @@
           <span class="mdi {{ nav.icon }}"></span>&nbsp;{{ nav.name }}</a
         >
       </mat-nav-list>
+
+      <ng-template #adminMenu>
+        <mat-nav-list>
+        <a
+        class="font-resize"
+        mat-list-item
+        (click)="mobileQuery.matches ? snav.toggle() : ''"
+        [routerLink]="nav.route" *ngFor="let nav of fillerNavAdmin">
+          <span class="mdi {{ nav.icon }}"></span>&nbsp;{{ nav.name }}</a
+        >
+      </mat-nav-list>
+      </ng-template>
     </mat-sidenav>
 
     <mat-sidenav-content class="content">

@@ -1,27 +1,15 @@
 const express = require('express');
-const cors = require('cors');
-const port = 4200;
+
+const port = 3000;
 const app = express();
-const fs=require("fs");
-const qrcode=require("qrcode");
 
-const urlCv="https://automaga.umizoomi.tk";
+// Serve dist folder as web page root
+app.use('/', express.static('dist'));
 
-const run=async()=> {
-  const QR=await qrcode.toDataURL(urlCv)
-  const htmlContent=`
-  <div style="display: flex; justify-content: center; align-items: center;">
-  <h2>QR Umizumi</h2>
-  <img src="${QR}">
-  </div>
-  `;
-  fs.writeFileSync('./qra.html',`${htmlContent}`)
-}
-
-run()
-app.use(cors());
-
-app.use(express.static('dist'));
+app.all('/*', function(req, res, next) {
+    // Just send the index.html for other files to support HTML5Mode
+    res.sendFile('dist/index.html', { root: __dirname });
+});
 
 app.listen(port, function () {
   console.log("Server is running on "+ port +" port");
