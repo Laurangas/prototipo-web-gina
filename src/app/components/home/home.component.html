@@ -72,12 +72,17 @@
           </ul>
         </div>
       </div>
+      
+    <p class="display-3">Accesibilidad (lector de pantalla)</p>
+    <button type="submit" class="btn btn-primary" id="play" (click)="reproducir()"><img src="https://img.icons8.com/android/24/000000/play.png"/></button>
+    <button type="button" class="btn btn-danger" id="pause" (click)="pausar()"><img src="https://img.icons8.com/android/24/000000/pause.png"/></button>
       <!-- Agregamos la tabla de grid angular-->
       <ag-grid-angular style="width: 602px; height: 280px;" class="ag-theme-alpine" [rowData]="rowData"
         [columnDefs]="columnDefs">
       </ag-grid-angular>
     </article>
   </section>
+  
   <footer id="main-footer">
     <!-- /PIE DE PAGINA-->
     <p>&copy; 2020 <a>EquipoUmizoomi</a></p>
