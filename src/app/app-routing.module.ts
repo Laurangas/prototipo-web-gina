@@ -17,6 +17,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ModificarLlantaComponent } from './components/app/modificar-llanta/modificar-llanta.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 const routes: Routes = [
   // {path:'grilla', component:SidenavComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'question', component: QuestionComponent },
+  { path: 'faq', component: FaqComponent },
   { path: 'alta', component: QuestionComponent },
   { path: '404', component: NotFoundComponent },
   { path: 'app/registro-llanta', component: RegistroLlantaComponent},

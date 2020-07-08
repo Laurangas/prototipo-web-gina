@@ -47,6 +47,7 @@ import { ReporteTotalLlantasComponent } from './components/app/reporte-total-lla
 import { DialogComponent } from './components/shared/dialog/dialog.component';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     RegistroLlantaComponent,
     ModificarLlantaComponent,
-    ReporteTotalLlantasComponent
+    ReporteTotalLlantasComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
