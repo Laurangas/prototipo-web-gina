@@ -4,7 +4,6 @@ import { RegistroLlantaComponent } from './components/app/registro-llanta/regist
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { GrillaComponent } from './components/grilla/grilla.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardComponent } from './components/app/dashboard/dashboard.component';
 import { ContactComponent } from './components/contact/contact.component';
