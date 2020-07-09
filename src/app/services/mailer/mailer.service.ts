@@ -17,7 +17,7 @@ export class MailerService {
 
   sendMail(email: string, subject: string, text: string) {
 
-    this.http.post('http://automaga.umizoomi.tk/api/mail',
+    this.http.post('https://automaga.umizoomi.tk/api/mail',
         {
           from: 'al174382@edu.uaa.mx',
           to: 'rodogonzalez98@gmail.com',

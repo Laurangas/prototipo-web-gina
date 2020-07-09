@@ -15,7 +15,7 @@ export class QrService {
   constructor(private httpClient: HttpClient) { }
 
   qr(str: string): Observable<QR> {
-    return this.httpClient.post<QR>('http://autoamaga.umizoomi.tk/api/qr', {str}).pipe(
+    return this.httpClient.post<QR>('https://autoamaga.umizoomi.tk/api/qr', {str}).pipe(
       catchError(this.handleError<QR>('0'))
     );
   }
