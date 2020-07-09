@@ -23,7 +23,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatTableModule } from '@angular/material/table'
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AngularFireAuthModule } from 'angularfire2/auth';//Referente a firebase
@@ -96,7 +96,8 @@ import { HomeComponent } from './components/home/home.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     AuthService,
