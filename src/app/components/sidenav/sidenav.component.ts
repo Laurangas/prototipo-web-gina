@@ -3,6 +3,7 @@ import { Component, OnInit, ChangeDetectorRef, } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { ReaderService } from 'src/app/services/reader/reader.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -15,7 +16,8 @@ export class SidenavComponent implements OnInit {
               media: MediaMatcher,
               private router: Router,
               public fontSizeService: FontSizeService,
-              public authService: AuthService) {
+              public authService: AuthService,
+              public readerService: ReaderService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
   }
   mobileQuery: MediaQueryList;

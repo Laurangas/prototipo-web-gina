@@ -42,6 +42,14 @@
           class="mdi mdi-format-font-size-decrease"></span>
         </button>
 
+        <button
+        class="font-resize"
+        (click)="this.readerService.reproducir()"
+        mat-menu-item
+        >
+        <span class="mdi mdi-ear-hearing"></span>
+    </button>
+
     </mat-menu>
 
     <span class="mat-button-wrapper" *ngIf="authService.userData as user; else preLogin">
