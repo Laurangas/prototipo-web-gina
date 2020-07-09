@@ -9,7 +9,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component'; // im
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { QuestionComponent } from './components/question/question.component';
-import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/app/dashboard/dashboard.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { AgGridModule } from 'ag-grid-angular';
@@ -38,7 +38,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegistroLlantaComponent } from './components/app/registro-llanta/registro-llanta.component';
@@ -49,6 +49,7 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { HttpClientModule } from '@angular/common/http';
 import { FaqComponent } from './components/faq/faq.component';
 import { ChartsModule } from 'ng2-charts';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -58,17 +59,18 @@ import { ChartsModule } from 'ng2-charts';
     ContactComponent,
     AboutComponent,
     QuestionComponent,
-    HomeComponent,
+    DashboardComponent,
     SignInComponent,
     ForgotPasswordComponent,
-    DashboardComponent,
+    PerfilComponent,
     SignUpComponent,
     VerifyEmailComponent,
     NotFoundComponent,
     RegistroLlantaComponent,
     ModificarLlantaComponent,
     ReporteTotalLlantasComponent,
-    FaqComponent
+    FaqComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

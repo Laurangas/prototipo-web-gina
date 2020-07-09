@@ -74,13 +74,13 @@
       <span *ngIf="authService.userData else loginMenu">
         <button
         class="font-resize"
-        mat-menu-item [routerLink]="['dashboard']">
+        mat-menu-item [routerLink]="['perfil']">
           Página de usuario
         </button>
         <!-- Calling SignOut() Api from AuthService -->
         <button
         class="font-resize"
-        mat-menu-item (click)="authService.SignOut()" [routerLink]="['home']">
+        mat-menu-item (click)="authService.SignOut()" [routerLink]="['dashboard']">
           Cerrar sesión
         </button>
       </span>

@@ -34,7 +34,7 @@ export class SidenavComponent implements OnInit {
     {name: 'Alta de llantas', route: 'app/registro-llanta', icon: 'mdi-plus-circle'},
     {name: 'Modificar llantas', route: 'app/modificar-llanta', icon: 'mdi-circle-edit-outline'},
     {name: 'Reporte de llantas', route: 'app/reporte-llanta', icon: 'mdi-circle-edit-outline'},
-    {name: 'Dashboard', route: 'dashboard', icon: 'mdi-circle-edit-outline'}
+    {name: 'Perfil', route: 'perfil', icon: 'mdi-circle-edit-outline'}
   ];
 
   shouldRun = true;

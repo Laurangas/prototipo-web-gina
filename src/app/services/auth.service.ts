@@ -39,7 +39,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['perfil']);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -57,7 +57,7 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['perfil']);
       }).catch((error) => {
         this.dialogModule.openDialog('mdi-alert-circle-outline',
         'Error al registrar',
@@ -101,7 +101,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['perfil']);
         });
        this.SetUserData(result.user);
     }).catch((error) => {

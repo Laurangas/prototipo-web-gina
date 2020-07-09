@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { GrillaComponent } from './components/grilla/grilla.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/app/dashboard/dashboard.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { QuestionComponent } from './components/question/question.component';
@@ -14,17 +14,19 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ModificarLlantaComponent } from './components/app/modificar-llanta/modificar-llanta.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'perfil', component: PerfilComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'question', component: QuestionComponent },

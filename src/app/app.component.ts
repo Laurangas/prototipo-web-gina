@@ -16,6 +16,6 @@ export class AppComponent {
   myFunction() {
     setTimeout(function() {
       document.getElementById("mda").remove();
-    }, 3000);
+    }, 0);
 }
 }

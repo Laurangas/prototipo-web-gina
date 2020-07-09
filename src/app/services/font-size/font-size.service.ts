@@ -65,8 +65,6 @@ export class FontSizeService {
 
       // actualiza el tamaño de fuente
       y[i].style.fontSize = currentElementFontSize + this.step + 'px';
-      console.log(y[i]);
-      console.log( y[i].style.fontSize + "curr" + currentElementFontSize);
     }
   }
 }
