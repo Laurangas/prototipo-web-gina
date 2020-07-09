@@ -8,7 +8,6 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardComponent } from './components/app/dashboard/dashboard.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
-import { QuestionComponent } from './components/question/question.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -28,9 +27,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'question', component: QuestionComponent },
   { path: 'faq', component: FaqComponent },
-  { path: 'alta', component: QuestionComponent },
   { path: '404', component: NotFoundComponent },
   { path: 'app/registro-llanta', component: RegistroLlantaComponent},
   { path: 'app/modificar-llanta', component: ModificarLlantaComponent},

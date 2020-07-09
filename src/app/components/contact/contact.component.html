@@ -1,54 +1,117 @@
-<!-- <p>contact works!</p> -->
+<header>
+  <mat-toolbar color="primary" class="title font-size-variable">
+  <span class="mdi mdi-email"></span>
+    Contacto
+  </mat-toolbar>
+</header>
 
+<div class="page-content font-size-variable">
 
+  <div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Nosotros</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Nosotros somos una empresa dedicada al 100% en nuestros usuarios.</p>
+        </mat-card-content>
+    </mat-card>
+    
 
-<div class="container font-size-variable">
-  <div class="row text-center">
-    <div class="col-lg-4">
-      <h3 class="text-uppercase text-center pb-4">Nosotros</h3>
-      <p class="pb-4">Nosotros somos una empresa dedicada al 100% en nuestros usuarios.</p>
-      <nav class="sociales text-lg-right">
-        <ul>
-            <img src="https://img.icons8.com/ios-filled/50/000000/facebook.png"/>
-            <a href="https://www.facebook.com">Facebook</a>
-            <img src="https://img.icons8.com/material/64/000000/twitter--v1.png"/>
-            <a href="https://twitter.com">Twitter</a>
-            <br><img src="https://img.icons8.com/windows/64/000000/instagram-new.png"/>
-            <a href="https://www.instagram.com">Instagram</a>
-            <img src="https://img.icons8.com/ios-filled/64/000000/pinterest.png"/>
-            <a href="https://www.pinterest.com.mx">Pinterest</a>
-            <img src="https://img.icons8.com/windows/64/000000/youtube.png"/>
-            <a href="https://www.youtube.com">Youtube</a>
-        </ul>
+    <mat-card>
+      <mat-card-header>
+          <mat-card-title>Contacto</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="form">
+          <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input
+              #msgEmail
+              matInput
+              [formControl]="emailFormControl"
+              [errorStateMatcher]="matcher"
+              placeholder="Introduce tu email"
+            />
+            <mat-error
+              *ngIf="
+                emailFormControl.hasError('email') &&
+                !emailFormControl.hasError('required')
+              "
+            >
+              Por favor introduce un email correcto
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              El correo es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+      
+      
+          <mat-form-field class="full-width">
+            <mat-label>Asunto</mat-label>
+            <input
+              #msgAsunto
+              matInput
+              [formControl]="emailFormControl"
+              [errorStateMatcher]="matcher"
+              placeholder="Asunto"
+            />
+          </mat-form-field>
+      
+          <mat-form-field class="full-width">
+            <mat-label>Comentario</mat-label>
+            <textarea
+            #msgTexto
+            matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="5"
+            cdkAutosizeMaxRows="15"></textarea>
+          </mat-form-field>
+      
+          <button
+          mat-button
+          mat-flat-button
+          color="primary"
+          (click)="mailerService.sendMail(msgEmail.value, msgAsunto.value, msgTexto.value)">
+          Enviar correo
+          </button>
+        </form>
 
-      </nav>
-    </div>
-    <div>
-      <h3 class="text-uppercase pb-4">Horario</h3>
-      <p >De Lunes a Viernes</p>
-      <p class="pb-4">Todos los días 9am - 6pm</p>
-      <p >Sabados</p>
-      <p class="pb-4" >Solo en horario de 11:00am - 4:00pm</p>
-      <p >Domingos</p>
-      <p class="pb-4">Nos encontramos fuera de servicio.</p>
-      <p class="pb-4">Sienta con la libertad de contactarnos atraves de las redes sociales que aparecen en esta misma pagina</p>
-    </div>
-    <div class="col-lg-4 align-items-center ">
-      <h3 class="text-uppercase pb-4">Contacto</h3>
-      <p> Oficinas Tel. (449) 2846583 </p><br>
-      <p> Juan Jose Arriaga Luna</p>
-      <p> Tel. (449) 8983984 </p>
-      <p> Brandon Ponce Lopes</p>
-      <p> Tel. (449) 2974624 </p>
-      <p> Ana Laura Arrellin Reyes </p>
-      <p> Tel. (449) 12387423</p>
-      <p> Bernardo Galvan Rivera </p>
-      <p> Tel. (449) 30567493 </p>
-      <p> Rodolfo Gonzalez Delgado </p>
-      <p> Tel. (449) 13804984 </p>
+    <div class="spacer"></div>
+    <p>Oficinas Tel. (449) 2846583</p>
+    <p>Juan Jose Arriaga Luna</p>
+    <p>Tel. (449) 8983984</p>
+    <p>Brandon Ponce Lopes</p>
+    <p>Tel. (449) 2974624</p>
+    <p>Ana Laura Arrellin Reyes</p>
+    <p>Tel. (449) 12387423</p>
+    <p>Bernardo Galvan Rivera</p>
+    <p>Tel. (449) 30567493</p>
+    <p>Rodolfo Gonzalez Delgado</p>
+    <p>Tel. (449) 13804984</p>
+    <p>Sientase con la libertad de contactarnos en nuestras redes sociales</p>
+        <span class="mdi mdi-facebook"></span>
+        <span class="mdi mdi-twitter"></span>
+        <span class="mdi mdi-whatsapp"></span>
+        <span class="mdi mdi-pinterest"></span>
+      </mat-card-content>
+  </mat-card>
 
-    </div>
-    <hr>
-    <p class="text-center copyright col-lg-12">Todos los derechos reservados.</p>
+    <mat-card>
+      <mat-card-header>
+          <mat-card-title>Horario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>De Lunes a Viernes</p>
+        <p>Todos los días 9am - 6pm</p>
+        <p>Sabados</p>
+        <p>Solo en horario de 11:00am - 4:00pm</p>
+        <p>Domingos</p>
+        <p>Nos encontramos fuera de servicio.</p>
+      </mat-card-content>
+  </mat-card>
+
+    <p>Todos los derechos reservados.</p>
   </div>
 </div>

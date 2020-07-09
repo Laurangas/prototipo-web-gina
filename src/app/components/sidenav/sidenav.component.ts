@@ -24,8 +24,7 @@ export class SidenavComponent implements OnInit {
     {name: 'Home', route: 'home', icon: 'mdi-home'},
     {name: 'Contacto', route: 'contact', icon: 'mdi-contacts'},
     {name: 'Acerca de', route: 'about', icon: 'mdi-baby-face'},
-    {name: 'Preguntas frecuentes', route: 'question', icon: 'mdi-frequently-asked-questions'},
-    {name: 'FAQ', route: 'faq', icon: 'mdi-frequently-asked-questions'}
+    {name: 'Preguntas frecuentes', route: 'faq', icon: 'mdi-frequently-asked-questions'},
   ];
 
   fillerNavAdmin = [

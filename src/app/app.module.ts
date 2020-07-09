@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component'; // importamos sidenav para el menu (es un tipo de menu)
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
-import { QuestionComponent } from './components/question/question.component';
 import { DashboardComponent } from './components/app/dashboard/dashboard.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -56,7 +55,6 @@ import { HomeComponent } from './components/home/home.component';
     SidenavComponent,
     ContactComponent,
     AboutComponent,
-    QuestionComponent,
     DashboardComponent,
     SignInComponent,
     ForgotPasswordComponent,
