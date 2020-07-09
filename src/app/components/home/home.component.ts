@@ -64,12 +64,15 @@ public pieChartOptions: ChartOptions = {
     }
 }
 };
-public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
-public pieChartData: SingleDataSet = [300, 500, 100];
+
+
+public pieChartLabels: Label[] = ['En mantenimiento', 'Vulcanizdas', 'En uso', 'Almacén'];
+public pieChartData: SingleDataSet = [50, 500, 100, 150];
 public pieChartType: ChartType = 'pie';
 public pieChartLegend = true;
 public pieChartPlugins = [];
 llantas: Llantasexistencia[];
+
   ngOnInit(): void {
     this.qrService.qr('http://youtube.com').subscribe(
       (qr: QR) => {
@@ -82,16 +85,19 @@ llantas: Llantasexistencia[];
         return {
           id: e.payload.doc.id,
           ...e.payload.doc.data() as Llantasexistencia }
-      })
+      });
+      this.pieChartData = this.pieChartData = [this.llantas[0].mantenimiento, this.llantas[0].vulcanizadas, this.llantas[0].enuso, this.llantas[0].almacen];
     });
 
     let l: Llantasexistencia = {
-      mantenimiento: 5,
-      vulcanizadas: 2,
-      enuso: 4,
-      almacen: 3,
+      id: null,
+      mantenimiento: 4,
+      almacen: 2, 
+      vulcanizadas: 10,
+      enuso: 8
     }
 
+    //this.create(l);
   }
 
   create(llanta: Llantasexistencia) {
