@@ -30,18 +30,25 @@ export class SidenavComponent implements OnInit {
   ];
 
   fillerNavAdmin = [
-    {name: 'Home', route: 'home', icon: 'mdi-home'},
     {name: 'Panel de control', route: 'dashboard', icon: 'mdi-speedometer'},
-    {name: 'Alta de llantas', route: 'app/registro-llanta', icon: 'mdi-plus-circle'},
-    {name: 'Modificar llantas', route: 'app/modificar-llanta', icon: 'mdi-circle-edit-outline'},
-    {name: 'Reporte de llantas', route: 'app/reporte-llanta', icon: 'mdi-circle-edit-outline'},
+    {name: 'Registrar llantas al almacén', route: 'app/registro-llanta', icon: 'mdi-plus-circle'},
+    {name: 'Actualizar datos llanta almacén', route: 'app/modificar-llanta', icon: 'mdi-circle-edit-outline'},
+    {name: 'Detalle de llantas en el almacén', route: 'app/reporte-llanta', icon: 'mdi-circle-edit-outline'},
+    {name: 'Registrar nuevas unidades', route: 'app/unidad/alta-unidad', icon: 'mdi-plus-circle'},  
+    {name: 'Detalle de unidades', route: 'app/unidad/detalle-unidad', icon: 'mdi-plus-circle'},  
+    {name: 'Perfil', route: 'perfil', icon: 'mdi-circle-edit-outline'}
+  ];
+
+  fillerNavUser = [
+    {name: 'Detalle de llantas en el almacén', route: 'app/reporte-llanta', icon: 'mdi-circle-edit-outline'},
+    {name: 'Detalle de unidades', route: 'app/unidad/detalle-unidad', icon: 'mdi-plus-circle'},  
     {name: 'Perfil', route: 'perfil', icon: 'mdi-circle-edit-outline'}
   ];
 
   shouldRun = true;
 
   ngOnInit(): void {
-    
+
   }
 
 }

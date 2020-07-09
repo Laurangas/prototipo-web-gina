@@ -1,7 +1,7 @@
 <div class="container">
   <header>
     <mat-toolbar color="primary" class="title">
-      Modificar entrada de llantas
+      Actualizar datos de una llanta
     </mat-toolbar>
   </header>
   <div
@@ -11,48 +11,55 @@
     fxLayoutGap="7px"
     fxLayoutGap.sm="0px"
   >
-    <mat-form-field fxFlex>
-      <mat-label>Código de la Llanta</mat-label>
-      <input matInput />
-    </mat-form-field>
+
+  <mat-form-field fxFlex appearance="fill">
+    <mat-label>Seleccione llanta</mat-label>
+    <mat-select [(ngModel)]="id">
+      <mat-option *ngFor="let llanta of llantas; let i = index" [value]="llanta.id"
+      (click)="this.select(i)"
+      >
+        {{llanta.codigo}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Marca</mat-label>
-      <input matInput />
+      <input #marca matInput [value]="this.llanta.marca"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Modelo</mat-label>
-      <input matInput />
+      <input #modelo matInput [value]="this.llanta.modelo"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Tipo</mat-label>
-      <input matInput />
+      <input #tipo matInput [value]="this.llanta.tipo"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Tamaño de ring</mat-label>
-      <input matInput />
+      <input #tamano matInput [value]="this.llanta.tamano"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Ancho de la llanta</mat-label>
-      <input matInput />
+      <input #ancho matInput [value]="this.llanta.ancho"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Profundidad en milímetros, de nueva</mat-label>
-      <input matInput />
+      <input #profundidad matInput [value]="this.llanta.profundidad"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Rendimiento según fabricante en kilómetros</mat-label>
-      <input matInput />
+      <input #rendimiento matInput [value]="this.llanta.rendimiento"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Costo</mat-label>
-      <input matInput />
+      <input #costo matInput [value]="this.llanta.costo"/>
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label
         >Profundidad a la que se debe cambiar la llanta, en
         milímetros</mat-label
       >
-      <input matInput />
+      <input #cambio matInput [value]="this.llanta.cambio"/>
     </mat-form-field>
     <div class="mat-radio-group" fxLayoutGap="5px">
       <mat-radio-group label="Está vulcanizada">
@@ -60,6 +67,13 @@
         <mat-radio-button value="2">No está vulcanizada</mat-radio-button>
       </mat-radio-group>
     </div>
-    <button mat-flat-button color="primary">Registrar</button>
+    <button 
+    (click)="this.updateLlanta(this.llanta.id, marca.value, modelo.value, tipo.value, tamano.value, ancho.value, profundidad.value, rendimiento.value, costo.value, cambio.value)"
+    mat-flat-button color="primary">Actualizar</button>
+    
+    
+    <button
+    (click)="this.delete(id)" 
+    mat-flat-button color="secondary">Eliminar</button>
   </div>
 </div>

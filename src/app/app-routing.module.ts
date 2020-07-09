@@ -17,6 +17,8 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ModificarLlantaComponent } from './components/app/modificar-llanta/modificar-llanta.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { HomeComponent } from './components/home/home.component';
+import { AltaUnidadComponent } from './components/app/unidad/alta-unidad/alta-unidad.component';
+import { DetalleUnidadComponent } from './components/app/unidad/detalle-unidad/detalle-unidad.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'app/registro-llanta', component: RegistroLlantaComponent},
   { path: 'app/modificar-llanta', component: ModificarLlantaComponent},
   { path: 'app/reporte-llanta', component: ReporteTotalLlantasComponent},
+  { path: 'app/unidad/alta-unidad', component: AltaUnidadComponent},
+  { path: 'app/unidad/detalle-unidad', component: DetalleUnidadComponent},
   { path: 'dialog', component: DialogComponent},
   { path: '**', redirectTo: '/404' },
 ];

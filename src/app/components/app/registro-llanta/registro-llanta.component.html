@@ -13,46 +13,46 @@
   >
     <mat-form-field fxFlex>
       <mat-label>Código de la Llanta</mat-label>
-      <input matInput />
+      <input #codigo matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Marca</mat-label>
-      <input matInput />
+      <input #marca matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Modelo</mat-label>
-      <input matInput />
+      <input #modelo matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Tipo</mat-label>
-      <input matInput />
+      <input #tipo matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Tamaño de ring</mat-label>
-      <input matInput />
+      <input #tamano matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Ancho de la llanta</mat-label>
-      <input matInput />
+      <input #ancho matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Profundidad en milímetros, de nueva</mat-label>
-      <input matInput />
+      <input #profundidad matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Rendimiento según fabricante en kilómetros</mat-label>
-      <input matInput />
+      <input #rendimiento matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label>Costo</mat-label>
-      <input matInput />
+      <input #costo matInput />
     </mat-form-field>
     <mat-form-field fxFlex>
       <mat-label
         >Profundidad a la que se debe cambiar la llanta, en
         milímetros</mat-label
       >
-      <input matInput />
+      <input #cambio matInput />
     </mat-form-field>
     <div class="mat-radio-group">
       <mat-radio-group label="Está vulcanizada">
@@ -60,6 +60,8 @@
         <mat-radio-button value="2">No está vulcanizada</mat-radio-button>
       </mat-radio-group>
     </div>
-    <button mat-flat-button color="primary">Registrar</button>
+    <button mat-flat-button color="primary"
+    (click)="this.crearLlanta(codigo.value,marca.value, modelo.value, tipo.value, tamano.value, ancho.value, profundidad.value, rendimiento.value, costo.value, cambio.value)"
+    >Registrar</button>
   </div>
 </div>

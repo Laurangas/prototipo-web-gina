@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table'
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker'
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AngularFireAuthModule } from 'angularfire2/auth';//Referente a firebase
@@ -48,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FaqComponent } from './components/faq/faq.component';
 import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './components/home/home.component';
-
+import { AltaUnidadComponent } from './components/app/unidad/alta-unidad/alta-unidad.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DetalleUnidadComponent } from './components/app/unidad/detalle-unidad/detalle-unidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +69,9 @@ import { HomeComponent } from './components/home/home.component';
     ModificarLlantaComponent,
     ReporteTotalLlantasComponent,
     FaqComponent,
-    HomeComponent
+    HomeComponent,
+    AltaUnidadComponent,
+    DetalleUnidadComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +102,9 @@ import { HomeComponent } from './components/home/home.component';
     AngularFireDatabaseModule,
     MatDialogModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatCheckboxModule
   ],
   providers: [
     AuthService,

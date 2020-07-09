@@ -1,0 +1,81 @@
+<div class="container">
+    <header>
+      <mat-toolbar color="primary" class="title">
+        Alta de Unidad
+      </mat-toolbar>
+    </header>
+    <div
+      class="page-content"
+      fxLayout="row"
+      fxLayout.xs="column"
+      fxLayoutGap="7px"
+      fxLayoutGap.sm="0px"
+    >
+      <mat-form-field fxFlex>
+        <mat-label>Numero de Unidad</mat-label>
+        <input #numero matInput />
+      </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Marca</mat-label>
+            <mat-select #marca >
+              <mat-option value="volvo">Volvo</mat-option>
+              <mat-option value="hyundai">Hyundai</mat-option>
+              <mat-option value="mack">Mack</mat-option>
+              <mat-option value="scania">Scania</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+      <mat-form-field fxFlex>
+        <mat-label>Modelo</mat-label>
+        <input #modelo matInput />
+      </mat-form-field>
+      <mat-form-field fxFlex>
+        <mat-label>Capacidad en pasajeros</mat-label>
+        <input #capacidad matInput />
+      </mat-form-field>
+ 
+      <mat-form-field fxFlex>
+        <mat-label>Rendimiento en Kilómetros por Litro de combustible</mat-label>
+        <input #rendimiento matInput />
+      </mat-form-field>
+        
+      <mat-form-field fxFlex>
+        <mat-label>Cantidad de llantas que tiene instaladas</mat-label>
+        <input #llantas matInput />
+      </mat-form-field>
+
+      <div fxFlex>
+      <mat-label>Tipo de combustible </mat-label>
+          <mat-checkbox value="magna">Gasolina magna</mat-checkbox>
+          <mat-checkbox value="premium">Gasolina Premium</mat-checkbox>
+          <mat-checkbox value="diesel">Diésel</mat-checkbox>
+    </div>
+      <br>
+      <div fxFlex>
+
+      <mat-label>Tipo de unidad </mat-label>
+        <mat-radio-group class="mat-radio-group" #tipo aria-label="Select an option">
+            <mat-radio-button value="autobus">Autobús</mat-radio-button>
+            <mat-radio-button value="camioneta">Camioneta</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+
+      <div fxFlex>
+      <button 
+      (click)="crearUnidad(
+      numero.value,
+      modelo.value,
+      capacidad.value,
+      marca.value,
+      rendimiento.value,
+      llantas.value,
+      'premium',
+      'autobus')" 
+      mat-flat-button color="primary">Registrar</button>
+      </div>
+
+    </div> 
+  </div>
+  

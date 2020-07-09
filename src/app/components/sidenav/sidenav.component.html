@@ -123,7 +123,7 @@
       [fixedInViewport]=true
       fixedTopGap="64"
     >
-      <mat-nav-list *ngIf="!authService.userData else adminMenu" >
+      <mat-nav-list *ngIf="!authService.userData; else auserMenu" >
         <a
         class="font-resize"
         mat-list-item (click)="mobileQuery.matches ? snav.toggle() : ''"
@@ -132,8 +132,18 @@
         >
       </mat-nav-list>
 
-      <ng-template #adminMenu>
-        <mat-nav-list>
+      <ng-template #auserMenu>
+        <mat-nav-list *ngIf="authService.userData.email != 'admin@umizoomi.tk'; else adminMenu" >
+          <a
+          class="font-resize"
+          mat-list-item (click)="mobileQuery.matches ? snav.toggle() : ''"
+          [routerLink]="nav.route" *ngFor="let nav of fillerNavUser">
+            <span class="mdi {{ nav.icon }}"></span>&nbsp;{{ nav.name }}</a
+          >
+        </mat-nav-list>
+
+        <ng-template #adminMenu>
+          <mat-nav-list>
         <a
         class="font-resize"
         mat-list-item
@@ -142,6 +152,7 @@
           <span class="mdi {{ nav.icon }}"></span>&nbsp;{{ nav.name }}</a
         >
       </mat-nav-list>
+      </ng-template>
       </ng-template>
     </mat-sidenav>
 
