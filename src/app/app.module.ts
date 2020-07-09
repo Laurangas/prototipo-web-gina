@@ -30,7 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AngularFireAuthModule } from 'angularfire2/auth';//Referente a firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database'; //, FirebaseListObservable
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
@@ -71,8 +71,8 @@ import { ChartsModule } from 'ng2-charts';
     FaqComponent
   ],
   imports: [
-    ChartsModule,
     BrowserModule,
+    ChartsModule,
     AppRoutingModule,
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
@@ -93,6 +93,7 @@ import { ChartsModule } from 'ng2-charts';
     MatInputModule,
     MatMenuModule,
     MatTooltipModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,

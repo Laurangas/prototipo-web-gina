@@ -1,6 +1,11 @@
 import { QrService } from './../../services/qr.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscribable } from 'rxjs';
+import { ChartOptions, ChartType } from 'chart.js';
+import { SingleDataSet, Label } from 'ng2-charts';
+import { LlantasexistenciaService } from 'src/app/services/llantasexistencia.service';
+import { Llantasexistencia } from 'src/app/llantasexistencia.model';
+
 interface QR {
   dataUrl: string;
 }
@@ -46,15 +51,59 @@ export class HomeComponent implements OnInit {
   ];
 
 
-  constructor(private qrService: QrService) { }
+  constructor(private qrService: QrService, private llantasexistenciaservice: LlantasexistenciaService) { }
   dataURL: string;
-
+// Pie
+public pieChartOptions: ChartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  legend: {
+    labels: {
+        // This more specific font property overrides the global property
+        fontColor: 'white'
+    }
+}
+};
+public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
+public pieChartData: SingleDataSet = [300, 500, 100];
+public pieChartType: ChartType = 'pie';
+public pieChartLegend = true;
+public pieChartPlugins = [];
+llantas: Llantasexistencia[];
   ngOnInit(): void {
     this.qrService.qr('http://youtube.com').subscribe(
       (qr: QR) => {
         this.dataURL = qr.dataUrl;
       }
     );
+
+    this.llantasexistenciaservice.getLlantas().subscribe(data => {
+      this.llantas = data.map(e => {
+        return {
+          id: e.payload.doc.id,
+          ...e.payload.doc.data() as Llantasexistencia }
+      })
+    });
+
+    let l: Llantasexistencia = {
+      mantenimiento: 5,
+      vulcanizadas: 2,
+      enuso: 4,
+      almacen: 3,
+    }
+
+  }
+
+  create(llanta: Llantasexistencia) {
+    this.llantasexistenciaservice.createLlantas(llanta);
+  }
+
+  update(llanta: Llantasexistencia) {
+    this.llantasexistenciaservice.updateLlantas(llanta);
+  }
+
+  delete(llanta: Llantasexistencia) {
+    this.llantasexistenciaservice.deleteLlantas(llanta.id);
   }
 
   data() {
