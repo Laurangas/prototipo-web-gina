@@ -11,25 +11,23 @@ export class ReaderService {
   synth = window.speechSynthesis;
   rep: SpeechSynthesisUtterance;
   pausado = false;
-  init = true;
 
   reproducir() {
-    if ( this.pausado ) {
-      this.pausado = false;
+    if ( this.synth.paused ) {
       this.synth.resume();
-    } else {
-      if (this.init) {
-        this.iniciarRep();
-        this.synth.speak( this.rep );
-      } else {
-        this.synth.pause();
-        this.pausado = true;
-      }
+    }
+
+    if ( this.synth.speaking ) {
+      this.synth.pause();
+    }
+
+    if ( !this.synth.speaking ) {
+      this.iniciarRep();
+      this.synth.speak( this.rep );
     }
   }
 
   iniciarRep() {
-    this.init = false;
     document.querySelectorAll('[class="container"]').forEach( e => {
       this.Text += e.textContent;
     });
