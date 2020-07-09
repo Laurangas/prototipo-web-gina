@@ -48,6 +48,7 @@ import { DialogComponent } from './components/shared/dialog/dialog.component';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { FaqComponent } from './components/faq/faq.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { FaqComponent } from './components/faq/faq.component';
     FaqComponent
   ],
   imports: [
+    ChartsModule,
     BrowserModule,
     AppRoutingModule,
     AgGridModule.withComponents([]),

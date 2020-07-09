@@ -1,5 +1,9 @@
+import { QrService } from './../../services/qr.service';
 import { Component, OnInit } from '@angular/core';
-
+import { Subscribable } from 'rxjs';
+interface QR {
+  dataUrl: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -42,11 +46,22 @@ export class HomeComponent implements OnInit {
   ];
 
 
-  constructor() { }
-
+  constructor(private qrService: QrService) { }
+  dataURL: string;
 
   ngOnInit(): void {
+    this.qrService.qr('http://youtube.com').subscribe(
+      (qr: QR) => {
+        this.dataURL = qr.dataUrl;
+      }
+    );
   }
+
+  data() {
+    console.log('called!');
+    return 'data';
+  }
+
   reproducir() {
     if ( this.pausado ) {
       this.pausado = false;

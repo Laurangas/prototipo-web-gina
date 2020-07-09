@@ -18,10 +18,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ModificarLlantaComponent } from './components/app/modificar-llanta/modificar-llanta.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { PieComponent } from './components/charts/pie/pie.component';
 
 const routes: Routes = [
-  // {path:'grilla', component:SidenavComponent},
   { path: 'sign-in', component: SignInComponent },
+  { path: 'pie', component: PieComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
