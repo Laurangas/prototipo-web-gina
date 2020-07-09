@@ -39,10 +39,6 @@ export class SidenavComponent implements OnInit {
 
   shouldRun = true;
 
-  grilla(){
-    this.router.navigate(['/grilla']);
-  }
-
   ngOnInit(): void {
     
   }
