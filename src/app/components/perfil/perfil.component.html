@@ -20,8 +20,9 @@
 
 
           <mat-card class="card-picture">
-            <img mat-card-md-image class="user-picture" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
+            <img *ngIf="user.photoURL" mat-card-md-image class="user-picture" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
             <mat-card-title class="user-name font-size-variable" fxLayout.gt-xs="row" fxLayout.xs="column">
+            <div *ngIf="user.displayName" class="user-name-padding-top"></div>
             {{ user.displayName ? user.displayName : "Usuario" }}
             </mat-card-title>
             <mat-card-content>

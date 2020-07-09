@@ -56,8 +56,9 @@
       <button
       class="font-resize"
       mat-button [matMenuTriggerFor]="userMenu" aria-label="Menú de usuario" matTooltip="Menú de usuario">
-      <img class="user-icon" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}" />
-      {{user.displayName}}
+      <img *ngIf="user.photoURL" class="user-icon" src="{{(user.photoURL)}}" alt="{{user.displayName}}" />
+      <span *ngIf="!user.photoURL" class="mdi mdi-account-circle"></span>
+      {{ user.displayName ? user.displayName : "Usuario" }}
       <span class="mdi mdi-menu-down"></span>
     </button>
 

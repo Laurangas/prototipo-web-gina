@@ -31,7 +31,7 @@ export class SidenavComponent implements OnInit {
 
   fillerNavAdmin = [
     {name: 'Home', route: 'home', icon: 'mdi-home'},
-    {name: 'Pie', route: 'pie', icon: 'mdi-home'},
+    {name: 'Panel de control', route: 'dashboard', icon: 'mdi-speedometer'},
     {name: 'Alta de llantas', route: 'app/registro-llanta', icon: 'mdi-plus-circle'},
     {name: 'Modificar llantas', route: 'app/modificar-llanta', icon: 'mdi-circle-edit-outline'},
     {name: 'Reporte de llantas', route: 'app/reporte-llanta', icon: 'mdi-circle-edit-outline'},
