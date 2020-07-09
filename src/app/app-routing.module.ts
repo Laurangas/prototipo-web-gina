@@ -20,7 +20,6 @@ import { ModificarLlantaComponent } from './components/app/modificar-llanta/modi
 import { FaqComponent } from './components/faq/faq.component';
 
 const routes: Routes = [
-  // {path:'grilla', component:SidenavComponent},
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },

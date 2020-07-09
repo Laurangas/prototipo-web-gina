@@ -30,7 +30,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AngularFireAuthModule } from 'angularfire2/auth';//Referente a firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database'; //, FirebaseListObservable
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AuthService } from './services/auth.service';
@@ -48,6 +48,7 @@ import { DialogComponent } from './components/shared/dialog/dialog.component';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { FaqComponent } from './components/faq/faq.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { FaqComponent } from './components/faq/faq.component';
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     AppRoutingModule,
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
@@ -91,6 +93,7 @@ import { FaqComponent } from './components/faq/faq.component';
     MatInputModule,
     MatMenuModule,
     MatTooltipModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
